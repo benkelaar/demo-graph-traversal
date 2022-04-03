@@ -14,4 +14,5 @@ to install the required dependencies and
 ```bash
 poetry run pytest
 ```
+
 to run the unit tests
