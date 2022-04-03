@@ -1,9 +1,10 @@
 # demo-graph-traversal
-Showcasing some ways to traverse a decision tree
+Showcasing some ways to traverse an adaptation pathway.
 
-Project dependencies and virtual environment managed with https://python-poetry.org/
+## Building the code
+Project dependencies and virtual environment managed with [poetry](https://python-poetry.org/).
 
-After having [Installed poetry](https://python-poetry.org/docs/master/#installing-with-the-official-installer) you can run
+After having [installed poetry](https://python-poetry.org/docs/master/#installing-with-the-official-installer) you can run
 
 ```bash
 poetry install
@@ -12,7 +13,7 @@ poetry install
 to install the required dependencies and
 
 ```bash
-poetry run pytest
+poetry run pytest -vv
 ```
 
 to run the unit tests
