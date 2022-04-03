@@ -2,7 +2,12 @@ from __future__ import annotations
 
 
 class AdaptationNode:
-    def __init__(self, node_id: str, choices=None):
+    """Node that fully describes a graph of adaptation pathways.
+
+    Recursively contains all possible downstream choices.
+    """
+
+    def __init__(self, node_id: str, choices: list[AdaptationNode] = None):
         self.node_id = node_id
         self.choices = [] if choices is None else choices
 
@@ -13,7 +18,10 @@ class AdaptationNode:
         return self.choice_count() == 0
 
     def __str__(self):
-        return f"Node['{self.node_id}', {self.choice_count()} choices]"
+        choice_description = ("leaf" if self.is_leaf_node() else
+                              "1 choice" if self.choice_count() < 2 else
+                              f"{self.choice_count()} choices")
+        return f"Node['{self.node_id}', {choice_description}]"
 
 
 AdaptationPath = list[AdaptationNode]
